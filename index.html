@@ -3,37 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050608">
 
 <title>NØXRA VYRA — North Bengal After Dark</title>
+
+<meta name="description" content="NØXRA VYRA — North Bengal After Dark. Music • People • Places.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root{
-  --bg:#050608;
-  --bg2:#090b0f;
-  --panel:#0d1015;
-  --line:rgba(255,255,255,.10);
-  --text:#f4f7fb;
-  --muted:#8d96a5;
-  --blue:#8ed8ff;
-  --blue2:#3e9dff;
-  --white:#fff;
+  --black:#030405;
+  --dark:#07090c;
+  --panel:#0b0f14;
+  --panel2:#10151b;
+  --white:#f4f7fb;
+  --muted:#8993a1;
+  --blue:#9cddff;
+  --blue2:#3a9cff;
+  --line:rgba(255,255,255,.11);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
 }
 
 body{
-  background:
-    radial-gradient(circle at 80% 10%,rgba(62,157,255,.10),transparent 28%),
-    radial-gradient(circle at 15% 60%,rgba(142,216,255,.06),transparent 25%),
-    var(--bg);
-  color:var(--text);
+  background:var(--black);
+  color:var(--white);
   font-family:Inter,Arial,sans-serif;
   overflow-x:hidden;
 }
@@ -43,52 +45,37 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:100;
+  z-index:999;
   opacity:.035;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  background-image:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
 a{
-  color:inherit;
   text-decoration:none;
+  color:inherit;
 }
 
-button,input,select,textarea{
+button,
+input,
+select,
+textarea{
   font:inherit;
 }
 
+img{
+  max-width:100%;
+  display:block;
+}
+
 .container{
-  width:min(1180px,92%);
+  width:min(1200px,92%);
   margin:auto;
 }
 
 section{
-  padding:110px 0;
+  padding:120px 0;
   position:relative;
-}
-
-.section-label{
-  color:var(--blue);
-  font-size:11px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:18px;
-}
-
-.section-title{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(42px,7vw,82px);
-  line-height:.95;
-  letter-spacing:-4px;
-  text-transform:uppercase;
-  max-width:850px;
-}
-
-.section-copy{
-  color:var(--muted);
-  max-width:620px;
-  line-height:1.8;
-  margin-top:25px;
 }
 
 /* NAV */
@@ -97,26 +84,26 @@ nav{
   position:fixed;
   top:0;
   left:0;
-  right:0;
-  z-index:90;
-  padding:20px 0;
-  background:rgba(5,6,8,.55);
+  width:100%;
+  z-index:100;
+  padding:18px 0;
+  background:rgba(3,4,5,.62);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-inner{
-  width:min(1200px,92%);
+  width:min(1250px,92%);
   margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
 .logo{
-  font-family:"Space Grotesk",sans-serif;
+  font-family:"Space Grotesk";
+  font-size:20px;
   font-weight:800;
-  font-size:19px;
   letter-spacing:2px;
 }
 
@@ -127,33 +114,33 @@ nav{
 .nav-links{
   display:flex;
   gap:28px;
-  align-items:center;
 }
 
 .nav-links a{
-  color:#aeb5c1;
-  font-size:12px;
-  letter-spacing:1.5px;
+  color:#9ca6b4;
+  font-size:11px;
   text-transform:uppercase;
-  transition:.25s;
+  letter-spacing:2px;
+  transition:.3s;
 }
 
 .nav-links a:hover{
-  color:#fff;
+  color:white;
 }
 
-.nav-cta{
-  border:1px solid rgba(142,216,255,.5);
-  padding:11px 17px;
-  border-radius:3px;
-  color:#fff!important;
+.nav-enter{
+  border:1px solid rgba(156,221,255,.45);
+  padding:11px 18px;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 .menu{
   display:none;
-  border:0;
   background:none;
-  color:#fff;
+  border:0;
+  color:white;
   font-size:25px;
 }
 
@@ -163,80 +150,87 @@ nav{
   min-height:100vh;
   display:flex;
   align-items:center;
+  position:relative;
   overflow:hidden;
+
   background:
-    linear-gradient(180deg,rgba(0,0,0,.05),var(--bg)),
-    radial-gradient(ellipse at 50% 40%,rgba(64,130,180,.15),transparent 45%);
+    linear-gradient(90deg,
+      rgba(0,0,0,.94) 0%,
+      rgba(0,0,0,.72) 42%,
+      rgba(0,0,0,.28) 100%
+    ),
+    linear-gradient(0deg,
+      #030405 0%,
+      transparent 45%
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90")
+    center/cover no-repeat;
 }
 
 .hero:after{
   content:"";
   position:absolute;
-  width:700px;
-  height:700px;
+  width:600px;
+  height:600px;
   border-radius:50%;
-  background:rgba(62,157,255,.08);
-  filter:blur(120px);
-  right:-250px;
-  bottom:-300px;
+  background:#258dff;
+  opacity:.10;
+  filter:blur(140px);
+  right:-200px;
+  bottom:-200px;
 }
 
 .hero-content{
   position:relative;
-  z-index:2;
+  z-index:3;
 }
 
-.eyebrow{
-  color:#aab5c4;
-  font-size:11px;
+.hero-mini{
+  color:#a7b1bf;
+  font-size:10px;
   letter-spacing:5px;
-  margin-bottom:30px;
   text-transform:uppercase;
+  margin-bottom:30px;
 }
 
 .hero h1{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(70px,13vw,170px);
+  font-family:"Space Grotesk";
+  font-size:clamp(68px,12vw,165px);
   line-height:.78;
   letter-spacing:-9px;
   text-transform:uppercase;
-  max-width:1050px;
 }
 
-.hero h1 span{
+.hero h1 .outline{
   color:transparent;
-  -webkit-text-stroke:1px rgba(255,255,255,.75);
+  -webkit-text-stroke:1px rgba(255,255,255,.85);
 }
 
-.hero-tagline{
-  margin-top:38px;
-  font-size:clamp(15px,2vw,21px);
+.hero-sub{
+  margin-top:35px;
+  font-size:clamp(14px,2vw,20px);
   letter-spacing:5px;
-  color:#c7ced8;
+  color:#c8d0d9;
   text-transform:uppercase;
 }
 
 .hero-buttons{
   display:flex;
   gap:12px;
-  margin-top:38px;
   flex-wrap:wrap;
+  margin-top:35px;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:50px;
-  padding:0 24px;
   border:1px solid rgba(255,255,255,.2);
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-size:11px;
-  cursor:pointer;
-  transition:.3s;
+  color:white;
   background:transparent;
-  color:#fff;
+  padding:16px 23px;
+  cursor:pointer;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.3s;
 }
 
 .btn:hover{
@@ -245,16 +239,16 @@ nav{
 }
 
 .btn-primary{
-  background:#eaf7ff;
-  color:#050608;
-  border-color:#eaf7ff;
+  background:#eaf8ff;
+  color:#050607;
+  border-color:#eaf8ff;
 }
 
 .scroll{
   position:absolute;
-  bottom:28px;
   left:4%;
-  color:#657080;
+  bottom:28px;
+  color:#697583;
   font-size:9px;
   letter-spacing:4px;
   text-transform:uppercase;
@@ -264,23 +258,23 @@ nav{
 
 .marquee{
   overflow:hidden;
+  white-space:nowrap;
+  padding:20px 0;
+  background:#080a0d;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  padding:20px 0;
-  white-space:nowrap;
-  background:#080a0d;
 }
 
 .marquee-track{
   display:inline-block;
   animation:marquee 25s linear infinite;
   font-family:"Space Grotesk";
-  font-size:13px;
+  font-size:12px;
   letter-spacing:5px;
-  color:#697482;
+  color:#66717e;
 }
 
-.marquee-track span{
+.marquee-track b{
   color:var(--blue);
   margin:0 25px;
 }
@@ -290,59 +284,137 @@ nav{
   to{transform:translateX(-50%)}
 }
 
-/* DISCOVER */
+/* TITLES */
 
-.discover-grid{
-  margin-top:65px;
+.label{
+  color:var(--blue);
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.title{
+  font-family:"Space Grotesk";
+  font-size:clamp(44px,7vw,85px);
+  line-height:.9;
+  letter-spacing:-4px;
+  text-transform:uppercase;
+}
+
+.copy{
+  color:var(--muted);
+  line-height:1.8;
+  max-width:650px;
+  margin-top:25px;
+}
+
+/* INTRO */
+
+.intro-grid{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.intro-photo{
+  min-height:500px;
+  background:
+    linear-gradient(180deg,transparent 30%,rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1300&q=90")
+    center/cover;
+  border:1px solid var(--line);
+}
+
+.intro-text{
+  background:
+    radial-gradient(circle at 90% 10%,rgba(80,180,255,.14),transparent 35%),
+    var(--panel);
+  border:1px solid var(--line);
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.intro-text h3{
+  font-family:"Space Grotesk";
+  font-size:48px;
+  letter-spacing:-2px;
+  text-transform:uppercase;
+}
+
+.intro-text p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-top:18px;
+}
+
+/* FEATURE CARDS */
+
+.features{
+  margin-top:8px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:2px;
+  gap:8px;
 }
 
-.discover-card{
-  min-height:310px;
-  background:linear-gradient(145deg,#10151b,#080a0d);
-  border:1px solid var(--line);
-  padding:35px;
+.feature{
+  min-height:330px;
+  padding:32px;
   position:relative;
   overflow:hidden;
-  transition:.4s;
+  border:1px solid var(--line);
+  background:var(--panel);
 }
 
-.discover-card:after{
-  content:"";
+.feature:nth-child(1){
+  background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1571266028243-d220c9c3b0c8?auto=format&fit=crop&w=900&q=85")
+    center/cover;
+}
+
+.feature:nth-child(2){
+  background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=85")
+    center/cover;
+}
+
+.feature:nth-child(3){
+  background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=85")
+    center/cover;
+}
+
+.feature-content{
   position:absolute;
-  width:220px;
-  height:220px;
-  right:-100px;
-  bottom:-120px;
-  background:var(--blue2);
-  filter:blur(90px);
-  opacity:.15;
+  bottom:28px;
+  left:30px;
+  right:30px;
 }
 
-.discover-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(142,216,255,.35);
+.feature-number{
+  color:#9da7b4;
+  font-size:9px;
+  letter-spacing:3px;
 }
 
-.card-number{
-  color:#4d5866;
-  font-size:11px;
-  letter-spacing:2px;
-}
-
-.discover-card h3{
+.feature h3{
   font-family:"Space Grotesk";
-  font-size:32px;
+  font-size:34px;
   text-transform:uppercase;
-  margin-top:120px;
+  margin-top:10px;
 }
 
-.discover-card p{
-  color:#798391;
-  line-height:1.7;
-  margin-top:12px;
+.feature p{
+  color:#b0b8c2;
+  font-size:12px;
+  line-height:1.6;
+  margin-top:8px;
 }
 
 /* EVENTS */
@@ -351,115 +423,143 @@ nav{
   background:#07090c;
 }
 
-.event-box{
-  margin-top:60px;
+.event-main{
+  margin-top:65px;
+  min-height:580px;
+  position:relative;
+  overflow:hidden;
   border:1px solid var(--line);
+
   background:
-    radial-gradient(circle at 85% 20%,rgba(62,157,255,.14),transparent 30%),
-    linear-gradient(135deg,#10141a,#07090b);
-  padding:45px;
-  display:grid;
-  grid-template-columns:1.4fr .6fr;
-  gap:40px;
+    linear-gradient(90deg,
+      rgba(0,0,0,.95),
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.20)
+    ),
+    url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+}
+
+.event-content{
+  position:absolute;
+  left:50px;
+  bottom:50px;
+  max-width:650px;
 }
 
 .event-status{
   color:var(--blue);
-  font-size:10px;
+  font-size:9px;
   letter-spacing:4px;
   text-transform:uppercase;
 }
 
-.event-box h3{
+.event-main h3{
   font-family:"Space Grotesk";
-  font-size:clamp(38px,6vw,75px);
-  letter-spacing:-3px;
-  margin:20px 0;
+  font-size:clamp(45px,7vw,90px);
+  line-height:.85;
+  letter-spacing:-4px;
+  text-transform:uppercase;
+  margin:18px 0;
 }
 
-.event-box p{
-  color:#858e9b;
+.event-main p{
+  color:#b7c0ca;
   line-height:1.7;
-  max-width:620px;
+  max-width:550px;
 }
 
-.event-meta{
+/* EVENT INFO */
+
+.event-info{
   display:grid;
-  gap:12px;
-  align-content:center;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:8px;
+  gap:8px;
 }
 
-.meta{
-  border-top:1px solid var(--line);
-  padding:17px 0;
+.info{
+  padding:25px;
+  background:var(--panel);
+  border:1px solid var(--line);
 }
 
-.meta small{
+.info small{
+  color:#687382;
   display:block;
-  color:#596473;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:3px;
   text-transform:uppercase;
-  margin-bottom:7px;
+  margin-bottom:10px;
 }
 
-.meta strong{
-  font-size:13px;
-  font-weight:500;
+.info strong{
+  font-size:12px;
 }
 
 /* PEOPLE */
 
 .people-grid{
-  margin-top:60px;
+  margin-top:65px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  gap:8px;
 }
 
 .person{
-  min-height:260px;
+  min-height:330px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
   border:1px solid var(--line);
   padding:25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+
   background:
-    radial-gradient(circle at 50% 25%,rgba(142,216,255,.12),transparent 35%),
-    #0b0e12;
+    linear-gradient(180deg,transparent 25%,rgba(0,0,0,.95)),
+    var(--photo) center/cover;
 }
 
-.person-num{
-  color:#586270;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-bottom:auto;
+.person:nth-child(1){
+  --photo:url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=85");
+}
+
+.person:nth-child(2){
+  --photo:url("https://images.unsplash.com/photo-1571266028243-d220c9c3b0c8?auto=format&fit=crop&w=700&q=85");
+}
+
+.person:nth-child(3){
+  --photo:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85");
+}
+
+.person:nth-child(4){
+  --photo:url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=85");
 }
 
 .person h4{
   font-family:"Space Grotesk";
-  font-size:25px;
+  font-size:28px;
   text-transform:uppercase;
 }
 
 .person p{
-  color:#68727f;
-  font-size:11px;
-  letter-spacing:1px;
-  margin-top:6px;
+  color:#8d98a6;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:7px;
 }
 
 /* GALLERY */
 
 .gallery{
-  background:#07090c;
+  background:#06080b;
 }
 
 .gallery-grid{
-  margin-top:60px;
+  margin-top:65px;
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
-  grid-auto-rows:220px;
+  grid-template-rows:280px 280px;
   gap:7px;
 }
 
@@ -467,56 +567,78 @@ nav{
   position:relative;
   overflow:hidden;
   border:1px solid var(--line);
-  background:
-    linear-gradient(135deg,rgba(70,120,160,.2),transparent),
-    radial-gradient(circle at 70% 30%,rgba(142,216,255,.18),transparent 35%),
-    #0b0f14;
+  background:var(--photo) center/cover;
 }
 
-.gallery-item:nth-child(1){
-  grid-row:span 2;
-}
-
-.gallery-item:before{
-  content:"NØXRA VYRA";
+.gallery-item:after{
+  content:"";
   position:absolute;
-  inset:auto 20px 18px;
-  font-family:"Space Grotesk";
-  font-size:11px;
-  letter-spacing:3px;
-  color:rgba(255,255,255,.35);
+  inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.82));
 }
 
 .gallery-item span{
   position:absolute;
-  top:20px;
+  z-index:2;
+  bottom:20px;
   left:20px;
-  color:#6d7785;
   font-size:9px;
   letter-spacing:3px;
+  color:#e8edf2;
+  text-transform:uppercase;
+}
+
+.gallery-item:nth-child(1){
+  --photo:url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=90");
+  grid-row:span 2;
+}
+
+.gallery-item:nth-child(2){
+  --photo:url("https://images.unsplash.com/photo-1571266028243-d220c9c3b0c8?auto=format&fit=crop&w=900&q=90");
+}
+
+.gallery-item:nth-child(3){
+  --photo:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=90");
+}
+
+.gallery-item:nth-child(4){
+  --photo:url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=90");
+}
+
+.gallery-item:nth-child(5){
+  --photo:url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=90");
 }
 
 /* COMMUNITY */
 
+.community{
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=90")
+    center/cover fixed;
+}
+
 .community-box{
   margin-top:60px;
-  border:1px solid var(--line);
-  padding:45px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;
-  background:linear-gradient(130deg,#0e1217,#07090b);
+  padding:50px;
+  border:1px solid var(--line);
+  background:rgba(4,6,8,.7);
+  backdrop-filter:blur(12px);
 }
 
 .community-box h3{
   font-family:"Space Grotesk";
-  font-size:45px;
-  letter-spacing:-2px;
+  font-size:55px;
+  line-height:.9;
+  letter-spacing:-3px;
   text-transform:uppercase;
 }
 
 .community-box p{
-  color:#7c8693;
+  color:#9ba5b1;
   line-height:1.8;
   margin-top:20px;
 }
@@ -525,20 +647,24 @@ nav{
 
 .form{
   display:grid;
-  gap:12px;
+  gap:11px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
   width:100%;
-  background:#080b0f;
-  border:1px solid rgba(255,255,255,.12);
-  color:#fff;
   padding:16px;
+  color:white;
+  background:#070a0e;
+  border:1px solid rgba(255,255,255,.13);
   outline:none;
   border-radius:0;
 }
 
-input:focus,select:focus,textarea:focus{
+input:focus,
+select:focus,
+textarea:focus{
   border-color:var(--blue);
 }
 
@@ -551,33 +677,29 @@ select option{
   background:#080b0f;
 }
 
-.form .btn{
-  margin-top:4px;
-}
-
 /* HOST */
 
 .host{
-  background:#07090c;
+  background:#080a0d;
 }
 
 .host-grid{
-  margin-top:60px;
+  margin-top:65px;
   display:grid;
   grid-template-columns:.8fr 1.2fr;
-  gap:60px;
-  align-items:start;
+  gap:70px;
 }
 
 .host-copy h3{
   font-family:"Space Grotesk";
-  font-size:45px;
-  letter-spacing:-2px;
+  font-size:55px;
+  line-height:.9;
+  letter-spacing:-3px;
   text-transform:uppercase;
 }
 
 .host-copy p{
-  color:#7b8591;
+  color:#7e8997;
   line-height:1.8;
   margin-top:20px;
 }
@@ -585,29 +707,30 @@ select option{
 /* CONTACT */
 
 .contact-grid{
-  margin-top:60px;
+  margin-top:65px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:10px;
+  gap:8px;
 }
 
-.contact-card{
-  border:1px solid var(--line);
+.contact{
+  min-height:180px;
   padding:30px;
-  background:#0a0d11;
+  background:var(--panel);
+  border:1px solid var(--line);
 }
 
-.contact-card small{
-  color:#596473;
+.contact small{
+  color:#697483;
   font-size:9px;
   letter-spacing:3px;
   text-transform:uppercase;
 }
 
-.contact-card a,
-.contact-card strong{
+.contact a,
+.contact strong{
   display:block;
-  margin-top:14px;
+  margin-top:18px;
   font-size:14px;
 }
 
@@ -615,21 +738,16 @@ select option{
 
 footer{
   border-top:1px solid var(--line);
-  padding:55px 0 35px;
-}
-
-.footer-top{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  align-items:end;
+  padding:70px 0 35px;
+  background:#030405;
 }
 
 .footer-logo{
   font-family:"Space Grotesk";
-  font-size:clamp(35px,6vw,75px);
+  font-size:clamp(50px,10vw,130px);
   font-weight:800;
-  letter-spacing:-4px;
+  letter-spacing:-7px;
+  line-height:.8;
 }
 
 .footer-logo span{
@@ -637,16 +755,17 @@ footer{
 }
 
 .footer-tag{
-  color:#697482;
-  letter-spacing:3px;
+  margin-top:30px;
+  color:#687381;
+  letter-spacing:4px;
   font-size:10px;
 }
 
 .footer-bottom{
-  margin-top:60px;
+  margin-top:80px;
   display:flex;
   justify-content:space-between;
-  color:#4e5865;
+  color:#4f5965;
   font-size:9px;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -655,14 +774,14 @@ footer{
 /* MODAL */
 
 .modal{
+  display:none;
   position:fixed;
   inset:0;
-  z-index:200;
-  display:none;
+  z-index:500;
   place-items:center;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(12px);
   padding:20px;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(15px);
 }
 
 .modal.active{
@@ -670,38 +789,37 @@ footer{
 }
 
 .modal-box{
-  width:min(560px,100%);
-  background:#0b0e13;
+  width:min(550px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#0b0f14;
   border:1px solid rgba(255,255,255,.15);
   padding:35px;
   position:relative;
-  max-height:90vh;
-  overflow:auto;
 }
 
 .close{
   position:absolute;
-  top:15px;
+  top:13px;
   right:18px;
+  color:#87919e;
   border:0;
   background:none;
-  color:#89929e;
-  font-size:24px;
+  font-size:25px;
   cursor:pointer;
 }
 
 .modal h3{
   font-family:"Space Grotesk";
-  font-size:35px;
+  font-size:38px;
   text-transform:uppercase;
-  margin-bottom:8px;
 }
 
-.modal-copy{
-  color:#737d89;
+.modal p{
+  color:#7e8995;
+  line-height:1.7;
   font-size:13px;
-  line-height:1.6;
-  margin-bottom:25px;
+  margin:12px 0 25px;
 }
 
 /* REVEAL */
@@ -714,7 +832,7 @@ footer{
 
 .reveal.visible{
   opacity:1;
-  transform:none;
+  transform:translateY(0);
 }
 
 /* MOBILE */
@@ -722,20 +840,20 @@ footer{
 @media(max-width:800px){
 
   section{
-    padding:80px 0;
+    padding:85px 0;
   }
 
   .nav-links{
+    display:none;
     position:absolute;
-    top:70px;
+    top:68px;
     left:4%;
     right:4%;
-    display:none;
     flex-direction:column;
-    align-items:stretch;
+    gap:0;
+    padding:10px;
     background:#080b0f;
     border:1px solid var(--line);
-    padding:15px;
   }
 
   .nav-links.open{
@@ -743,46 +861,59 @@ footer{
   }
 
   .nav-links a{
-    padding:13px;
+    padding:14px;
+  }
+
+  .nav-enter{
+    display:none;
   }
 
   .menu{
     display:block;
   }
 
-  .nav-cta{
-    display:none;
-  }
-
   .hero h1{
     letter-spacing:-5px;
   }
 
-  .hero-tagline{
-    letter-spacing:2px;
-  }
-
-  .discover-grid,
-  .people-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .event-box,
+  .intro-grid,
   .community-box,
   .host-grid{
     grid-template-columns:1fr;
-    padding:28px;
-    gap:35px;
   }
 
-  .event-box h3{
-    letter-spacing:-2px;
+  .intro-photo{
+    min-height:350px;
+  }
+
+  .intro-text{
+    padding:30px;
+    min-height:350px;
+  }
+
+  .features,
+  .people-grid,
+  .contact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .event-main{
+    min-height:520px;
+  }
+
+  .event-content{
+    left:28px;
+    right:28px;
+    bottom:30px;
+  }
+
+  .event-info{
+    grid-template-columns:1fr 1fr;
   }
 
   .gallery-grid{
     grid-template-columns:1fr 1fr;
-    grid-auto-rows:180px;
+    grid-template-rows:220px 220px 220px;
   }
 
   .gallery-item:nth-child(1){
@@ -790,33 +921,59 @@ footer{
     grid-row:span 1;
   }
 
-  .footer-top,
+  .community-box{
+    padding:30px;
+  }
+
+  .community-box h3,
+  .host-copy h3{
+    font-size:45px;
+  }
+
   .footer-bottom{
     flex-direction:column;
-    align-items:flex-start;
+    gap:15px;
   }
 }
 
-@media(max-width:450px){
+@media(max-width:480px){
 
   .hero h1{
-    font-size:68px;
+    font-size:65px;
   }
 
-  .section-title{
-    letter-spacing:-2px;
+  .hero-sub{
+    letter-spacing:2px;
+  }
+
+  .features,
+  .people-grid,
+  .contact-grid,
+  .event-info{
+    grid-template-columns:1fr;
   }
 
   .gallery-grid{
     grid-template-columns:1fr;
+    grid-template-rows:240px 200px 200px 200px 200px;
   }
 
   .gallery-item:nth-child(1){
     grid-column:auto;
   }
 
-  .modal-box{
-    padding:25px 20px;
+  .gallery-item:nth-child(n){
+    grid-row:auto;
+  }
+
+  .community-box h3,
+  .host-copy h3{
+    font-size:40px;
+  }
+
+  .footer-logo{
+    font-size:58px;
+    letter-spacing:-4px;
   }
 }
 </style>
@@ -824,22 +981,26 @@ footer{
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
+
 <nav>
   <div class="nav-inner">
 
-    <a href="#home" class="logo">NØXRA <span>VYRA</span></a>
+    <a href="#home" class="logo">
+      NØXRA <span>VYRA</span>
+    </a>
 
     <div class="nav-links" id="navLinks">
       <a href="#discover">Discover</a>
       <a href="#events">Events</a>
       <a href="#people">People</a>
       <a href="#gallery">Gallery</a>
+      <a href="#community">Community</a>
       <a href="#host">Host</a>
       <a href="#contact">Contact</a>
     </div>
 
-    <a href="#events" class="nav-cta">Enter</a>
+    <a href="#events" class="nav-enter">Enter</a>
 
     <button class="menu" id="menuBtn">☰</button>
 
@@ -848,190 +1009,932 @@ footer{
 
 
 <!-- HERO -->
+
 <section class="hero" id="home">
+
   <div class="container hero-content reveal">
 
-    <div class="eyebrow">North Bengal • West Bengal • India</div>
+    <div class="hero-mini">
+      NORTH BENGAL • WEST BENGAL • INDIA
+    </div>
 
     <h1>
       THE<br>
-      <span>DARKNESS</span><br>
+      <span class="outline">DARKNESS</span><br>
       HAS A SOUND.
     </h1>
 
-    <div class="hero-tagline">
+    <div class="hero-sub">
       NORTH BENGAL AFTER DARK.
     </div>
 
     <div class="hero-buttons">
-      <a href="#events" class="btn btn-primary">Discover Events</a>
-      <a href="#community" class="btn">Join The Frequency</a>
+
+      <a href="#events" class="btn btn-primary">
+        Discover Events
+      </a>
+
+      <a href="#community" class="btn">
+        Join The Frequency
+      </a>
+
     </div>
 
   </div>
 
-  <div class="scroll">Scroll to enter ↓</div>
+  <div class="scroll">
+    SCROLL TO ENTER ↓
+  </div>
+
 </section>
 
 
 <!-- MARQUEE -->
+
 <div class="marquee">
   <div class="marquee-track">
-    NØXRA VYRA <span>✦</span>
-    MUSIC <span>✦</span>
-    PEOPLE <span>✦</span>
-    PLACES <span>✦</span>
-    NORTH BENGAL <span>✦</span>
-    AFTER DARK <span>✦</span>
-    NØXRA VYRA <span>✦</span>
-    MUSIC <span>✦</span>
-    PEOPLE <span>✦</span>
-    PLACES <span>✦</span>
-    NORTH BENGAL <span>✦</span>
-    AFTER DARK <span>✦</span>
+
+    NØXRA VYRA <b>✦</b>
+    MUSIC <b>✦</b>
+    PEOPLE <b>✦</b>
+    PLACES <b>✦</b>
+    NORTH BENGAL <b>✦</b>
+    AFTER DARK <b>✦</b>
+
+    NØXRA VYRA <b>✦</b>
+    MUSIC <b>✦</b>
+    PEOPLE <b>✦</b>
+    PLACES <b>✦</b>
+    NORTH BENGAL <b>✦</b>
+    AFTER DARK <b>✦</b>
+
   </div>
 </div>
 
 
 <!-- DISCOVER -->
+
 <section id="discover">
+
   <div class="container">
 
-    <div class="section-label reveal">01 — Discover</div>
+    <div class="label reveal">
+      01 — DISCOVER
+    </div>
 
-    <h2 class="section-title reveal">
-      MORE THAN<br>AN EVENT.
+    <h2 class="title reveal">
+      BORN IN THE<br>
+      NORTH.
     </h2>
 
-    <p class="section-copy reveal">
-      NØXRA VYRA is a growing underground electronic culture platform
+    <p class="copy reveal">
+      NØXRA VYRA is an underground electronic culture platform
       connecting music, people and places across North Bengal.
     </p>
 
-    <div class="discover-grid">
 
-      <div class="discover-card reveal">
-        <div class="card-number">01 / MUSIC</div>
-        <h3>Music</h3>
-        <p>
-          Electronic sounds, underground frequencies and artists
-          who create the atmosphere after dark.
-        </p>
-      </div>
+    <div class="intro-grid">
 
-      <div class="discover-card reveal">
-        <div class="card-number">02 / PEOPLE</div>
-        <h3>People</h3>
-        <p>
-          DJs, artists, creators, listeners and nightlife communities
-          brought together through shared energy.
-        </p>
-      </div>
+      <div class="intro-photo reveal"></div>
 
-      <div class="discover-card reveal">
-        <div class="card-number">03 / PLACES</div>
-        <h3>Places</h3>
+      <div class="intro-text reveal">
+
+        <h3>
+          FROM THE<br>
+          HILLS<br>
+          TO THE CITY.
+        </h3>
+
         <p>
-          From the hills to the city — discovering spaces that
-          become part of the NØXRA VYRA story.
+          The mist. The mountains. The roads. The city lights.
+          A new frequency is emerging after dark.
         </p>
+
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn">
+            Explore Visuals
+          </a>
+        </div>
+
       </div>
 
     </div>
+
+
+    <div class="features">
+
+      <div class="feature reveal">
+        <div class="feature-content">
+          <div class="feature-number">01 / MUSIC</div>
+          <h3>Music</h3>
+          <p>
+            Electronic sounds, underground frequencies and artists
+            shaping the night.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-content">
+          <div class="feature-number">02 / PEOPLE</div>
+          <h3>People</h3>
+          <p>
+            DJs, artists, creators and listeners connected by sound.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-content">
+          <div class="feature-number">03 / PLACES</div>
+          <h3>Places</h3>
+          <p>
+            Discovering spaces across North Bengal that become
+            part of the story.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 
 <!-- EVENTS -->
+
 <section class="events" id="events">
+
   <div class="container">
 
-    <div class="section-label reveal">02 — Events</div>
+    <div class="label reveal">
+      02 — EVENTS
+    </div>
 
-    <h2 class="section-title reveal">
-      ENTER THE<br>FREQUENCY.
+    <h2 class="title reveal">
+      ENTER THE<br>
+      FREQUENCY.
     </h2>
 
-    <div class="event-box reveal">
+    <div class="event-main reveal">
 
-      <div>
-        <div class="event-status">● Upcoming / Coming Soon</div>
+      <div class="event-content">
 
-        <h3>NØXRA VYRA<br>AFTER DARK</h3>
+        <div class="event-status">
+          ● NEXT CHAPTER / COMING SOON
+        </div>
+
+        <h3>
+          NØXRA<br>
+          VYRA<br>
+          AFTER DARK
+        </h3>
 
         <p>
-          The first chapter is being built. Event date, venue,
-          lineup and ticket information will be announced officially.
+          The first chapter is being built.
+          Official date, venue, lineup and ticket information
+          will be announced through NØXRA VYRA.
         </p>
 
         <div class="hero-buttons">
-          <button class="btn btn-primary" onclick="openModal('booking')">
-            RSVP / Booking Request
+
+          <button
+            class="btn btn-primary"
+            onclick="openBooking()">
+            RSVP / BOOKING REQUEST
           </button>
-        </div>
-      </div>
 
-      <div class="event-meta">
-
-        <div class="meta">
-          <small>Date</small>
-          <strong>To Be Announced</strong>
-        </div>
-
-        <div class="meta">
-          <small>Location</small>
-          <strong>North Bengal</strong>
-        </div>
-
-        <div class="meta">
-          <small>Sound</small>
-          <strong>Electronic / After Dark</strong>
-        </div>
-
-        <div class="meta">
-          <small>Tickets</small>
-          <strong>Coming Soon</strong>
         </div>
 
       </div>
 
     </div>
 
+
+    <div class="event-info">
+
+      <div class="info reveal">
+        <small>DATE</small>
+        <strong>TO BE ANNOUNCED</strong>
+      </div>
+
+      <div class="info reveal">
+        <small>LOCATION</small>
+        <strong>NORTH BENGAL</strong>
+      </div>
+
+      <div class="info reveal">
+        <small>SOUND</small>
+        <strong>ELECTRONIC / AFTER DARK</strong>
+      </div>
+
+      <div class="info reveal">
+        <small>TICKETS</small>
+        <strong>COMING SOON</strong>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 
 <!-- PEOPLE -->
+
 <section id="people">
+
   <div class="container">
 
-    <div class="section-label reveal">03 — People</div>
+    <div class="label reveal">
+      03 — PEOPLE
+    </div>
 
-    <h2 class="section-title reveal">
-      THE PEOPLE<br>BEHIND THE SOUND.
+    <h2 class="title reveal">
+      THE PEOPLE<br>
+      BEHIND THE SOUND.
     </h2>
 
-    <p class="section-copy reveal">
-      NØXRA VYRA is built around a community — not just a stage.
-      Artists, DJs, creators, venues and listeners all have a place here.
+    <p class="copy reveal">
+      NØXRA VYRA is built around a community —
+      DJs, artists, creators, venues and listeners.
     </p>
+
 
     <div class="people-grid">
 
       <div class="person reveal">
-        <div class="person-num">01</div>
-        <h4>DJs</h4>
-        <p>SELECTORS • PERFORMERS</p>
+        <div>
+          <h4>DJs</h4>
+          <p>SELECTORS • PERFORMERS</p>
+        </div>
       </div>
 
       <div class="person reveal">
-        <div class="person-num">02</div>
-        <h4>Artists</h4>
-        <p>CREATORS • PRODUCERS</p>
+        <div>
+          <h4>ARTISTS</h4>
+          <p>CREATORS • PRODUCERS</p>
+        </div>
       </div>
 
       <div class="person reveal">
-        <div class="person-num">03</div>
-        <h4>Creators</h4>
-        <p>VISUALS • CULTURE</p>
+        <div>
+          <h4>CREATORS</h4>
+          <p>VISUALS • CULTURE</p>
+        </div>
       </div>
+
+      <div class="person reveal">
+        <div>
+          <h4>LISTENERS</h4>
+          <p>THE COMMUNITY</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <div class="label reveal">
+      04 — GALLERY
+    </div>
+
+    <h2 class="title reveal">
+      MOMENTS<br>
+      AFTER DARK.
+    </h2>
+
+    <p class="copy reveal">
+      Mountains. Night roads. DJs. Crowds.
+      The visual language of NØXRA VYRA.
+    </p>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal">
+        <span>NORTH BENGAL / MIST</span>
+      </div>
+
+      <div class="gallery-item reveal">
+        <span>THE SOUND</span>
+      </div>
+
+      <div class="gallery-item reveal">
+        <span>THE CROWD</span>
+      </div>
+
+      <div class="gallery-item reveal">
+        <span>THE NIGHT</span>
+      </div>
+
+      <div class="gallery-item reveal">
+        <span>THE ENERGY</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section class="community" id="community">
+
+  <div class="container">
+
+    <div class="label reveal">
+      05 — COMMUNITY
+    </div>
+
+    <div class="community-box reveal">
+
+      <div>
+
+        <h3>
+          JOIN THE<br>
+          FREQUENCY.
+        </h3>
+
+        <p>
+          Want to become part of NØXRA VYRA?
+          Join as a DJ, artist, creator, listener,
+          venue or collaborator.
+        </p>
+
+      </div>
+
+
+      <form class="form" id="communityForm">
+
+        <input
+          id="communityName"
+          type="text"
+          placeholder="Your name"
+          required>
+
+        <input
+          id="communityEmail"
+          type="email"
+          placeholder="Email address"
+          required>
+
+        <input
+          id="communityInstagram"
+          type="text"
+          placeholder="Instagram / social handle">
+
+        <select id="communityRole" required>
+
+          <option value="">
+            Your role
+          </option>
+
+          <option>DJ</option>
+          <option>Artist</option>
+          <option>Creator</option>
+          <option>Listener</option>
+          <option>Venue</option>
+          <option>Brand</option>
+          <option>Other</option>
+
+        </select>
+
+        <button
+          class="btn btn-primary"
+          type="submit">
+          JOIN NØXRA VYRA
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HOST -->
+
+<section class="host" id="host">
+
+  <div class="container">
+
+    <div class="label reveal">
+      06 — HOST AN EVENT
+    </div>
+
+
+    <div class="host-grid">
+
+      <div class="host-copy reveal">
+
+        <h3>
+          BUILD THE<br>
+          NEXT NIGHT.
+        </h3>
+
+        <p>
+          Have a venue, event concept, artist lineup
+          or collaboration idea?
+          Send it to NØXRA VYRA.
+        </p>
+
+      </div>
+
+
+      <form class="form reveal" id="hostForm">
+
+        <input
+          id="hostName"
+          type="text"
+          placeholder="Your name / organisation"
+          required>
+
+        <input
+          id="hostEmail"
+          type="email"
+          placeholder="Email address"
+          required>
+
+        <input
+          id="hostLocation"
+          type="text"
+          placeholder="Venue / location">
+
+        <input
+          id="hostDate"
+          type="text"
+          placeholder="Preferred event date">
+
+        <input
+          id="hostCrowd"
+          type="text"
+          placeholder="Expected crowd">
+
+        <select id="hostStyle">
+
+          <option value="">
+            Music style
+          </option>
+
+          <option>House</option>
+          <option>Techno</option>
+          <option>Melodic</option>
+          <option>Drum & Bass</option>
+          <option>Multi-genre</option>
+          <option>Other</option>
+
+        </select>
+
+        <textarea
+          id="hostMessage"
+          placeholder="Tell us about your event">
+        </textarea>
+
+        <button
+          class="btn btn-primary"
+          type="submit">
+          SUBMIT EVENT IDEA
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="label reveal">
+      07 — CONTACT
+    </div>
+
+    <h2 class="title reveal">
+      SEE YOU<br>
+      AFTER DARK.
+    </h2>
+
+
+    <div class="contact-grid">
+
+      <div class="contact reveal">
+
+        <small>INSTAGRAM</small>
+
+        <a
+          href="https://instagram.com/NOXRAVYRA"
+          target="_blank">
+          @NOXRAVYRA
+        </a>
+
+      </div>
+
+
+      <div class="contact reveal">
+
+        <small>EMAIL</small>
+
+        <a href="mailto:noxravyra.events@gmail.com">
+          noxravyra.events@gmail.com
+        </a>
+
+      </div>
+
+
+      <div class="contact reveal">
+
+        <small>IDENTITY</small>
+
+        <strong>
+          NORTH BENGAL AFTER DARK.
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-logo">
+      NØXRA <span>VYRA</span>
+    </div>
+
+    <div class="footer-tag">
+      MUSIC • PEOPLE • PLACES
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NØXRA VYRA
+      </span>
+
+      <span>
+        NORTH BENGAL AFTER DARK.
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- BOOKING MODAL -->
+
+<div class="modal" id="bookingModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeBooking()">
+      ×
+    </button>
+
+    <h3>
+      REQUEST ACCESS
+    </h3>
+
+    <p>
+      Submit your booking request.
+      Official event and ticket details will be
+      confirmed by NØXRA VYRA.
+    </p>
+
+
+    <form class="form" id="bookingForm">
+
+      <input
+        id="bookingName"
+        type="text"
+        placeholder="Your name"
+        required>
+
+      <input
+        id="bookingEmail"
+        type="email"
+        placeholder="Email address"
+        required>
+
+      <input
+        id="bookingTickets"
+        type="number"
+        min="1"
+        max="20"
+        placeholder="Number of tickets"
+        required>
+
+      <textarea
+        id="bookingMessage"
+        placeholder="Anything we should know?">
+      </textarea>
+
+      <button
+        class="btn btn-primary"
+        type="submit">
+        SEND REQUEST
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",function(){
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+  link.addEventListener("click",function(){
+
+    navLinks.classList.remove("open");
+
+  });
+
+});
+
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(
+function(entries){
+
+  entries.forEach(function(entry){
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("visible");
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+},
+{
+  threshold:.12
+});
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+  observer.observe(element);
+
+});
+
+
+/* BOOKING MODAL */
+
+const bookingModal =
+document.getElementById("bookingModal");
+
+
+function openBooking(){
+
+  bookingModal.classList.add("active");
+
+  document.body.style.overflow="hidden";
+
+}
+
+
+function closeBooking(){
+
+  bookingModal.classList.remove("active");
+
+  document.body.style.overflow="";
+
+}
+
+
+bookingModal.addEventListener(
+"click",
+function(event){
+
+  if(event.target === bookingModal){
+
+    closeBooking();
+
+  }
+
+});
+
+
+/* COMMUNITY FORM */
+
+document
+.getElementById("communityForm")
+.addEventListener("submit",function(event){
+
+  event.preventDefault();
+
+  const name =
+  document.getElementById("communityName").value;
+
+  const email =
+  document.getElementById("communityEmail").value;
+
+  const instagram =
+  document.getElementById("communityInstagram").value;
+
+  const role =
+  document.getElementById("communityRole").value;
+
+
+  const subject =
+  encodeURIComponent(
+    "NØXRA VYRA — Community"
+  );
+
+
+  const body =
+  encodeURIComponent(
+`NØXRA VYRA COMMUNITY REQUEST
+
+Name: ${name}
+Email: ${email}
+Instagram: ${instagram}
+Role: ${role}
+`
+  );
+
+
+  window.location.href =
+  "mailto:noxravyra.events@gmail.com?subject="
+  + subject
+  + "&body="
+  + body;
+
+});
+
+
+/* HOST FORM */
+
+document
+.getElementById("hostForm")
+.addEventListener("submit",function(event){
+
+  event.preventDefault();
+
+  const name =
+  document.getElementById("hostName").value;
+
+  const email =
+  document.getElementById("hostEmail").value;
+
+  const location =
+  document.getElementById("hostLocation").value;
+
+  const date =
+  document.getElementById("hostDate").value;
+
+  const crowd =
+  document.getElementById("hostCrowd").value;
+
+  const style =
+  document.getElementById("hostStyle").value;
+
+  const message =
+  document.getElementById("hostMessage").value;
+
+
+  const subject =
+  encodeURIComponent(
+    "NØXRA VYRA — Event Proposal"
+  );
+
+
+  const body =
+  encodeURIComponent(
+`NØXRA VYRA EVENT PROPOSAL
+
+Name / Organisation: ${name}
+Email: ${email}
+Venue / Location: ${location}
+Preferred Date: ${date}
+Expected Crowd: ${crowd}
+Music Style: ${style}
+
+Event Details:
+
+${message}
+`
+  );
+
+
+  window.location.href =
+  "mailto:noxravyra.events@gmail.com?subject="
+  + subject
+  + "&body="
+  + body;
+
+});
+
+
+/* BOOKING FORM */
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(event){
+
+  event.preventDefault();
+
+  const name =
+  document.getElementById("bookingName").value;
+
+  const email =
+  document.getElementById("bookingEmail").value;
+
+  const tickets =
+  document.getElementById("bookingTickets").value;
+
+  const message =
+  document.getElementById("bookingMessage").value;
+
+
+  const subject =
+  encodeURIComponent(
+    "NØXRA VYRA — Booking Request"
+  );
+
+
+  const body =
+  encodeURIComponent(
+`NØXRA VYRA BOOKING REQUEST
+
+Name: ${name}
+Email: ${email}
+Tickets Requested: ${tickets}
+
+Message:
+
+${message}
+`
+  );
+
+
+  window.location.href =
+  "mailto:noxravyra.events@gmail.com?subject="
+  + subject
+  + "&body="
+  + body;
+
+});
+
+</script>
+
+</body>
+</html>
